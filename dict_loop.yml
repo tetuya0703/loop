@@ -1,0 +1,11 @@
+---
+- name: dict_loop
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: outer loop
+      include: dict_loop_inner.yml
+      with_dict: "{{ my_vars.dict_loop }}"
+      msg: "my_vars.dict_loop:{{ my_vars.dict_loop }}"
+      loop_control:
+        loop_var: outer_item

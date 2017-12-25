@@ -1,0 +1,20 @@
+---
+my_vars:
+  dict_loop:
+    outer_item1:
+      inner:
+        foo: inner_item1_1
+        hoge: inner_item1_2
+    outer_item2:
+      inner:
+        foo: inner_item2_1
+        hoge: inner_item2_2
+  list_loop:
+    - outer: outer_item1
+      inner:
+        - inner_item1_1
+        - inner_item1_2
+    - outer: outer_item2
+      inner:
+        - inner_item2_1
+        - inner_item2_2

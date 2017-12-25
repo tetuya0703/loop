@@ -1,0 +1,7 @@
+---
+- name: inner loop
+  debug:
+    msg: "outer:{{ outer_item.key }} inner:{{ inner_item.value }}"
+  with_dict: "{{ outer_item.value.inner }}"
+  loop_control:
+    loop_var: inner_item

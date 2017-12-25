@@ -1,0 +1,10 @@
+---
+- name: list_loop
+  hosts: localhost
+  connection: local
+  tasks:
+    - debug:
+        msg: "outer:{{ item.0.outer }} inner:{{ item.1 }}"
+      with_subelements:
+        - "{{ my_vars.list_loop }}"
+        - inner
